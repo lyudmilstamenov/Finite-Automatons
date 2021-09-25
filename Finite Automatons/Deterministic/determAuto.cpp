@@ -285,11 +285,7 @@ bool DetermAutomaton::isWordFromAuto(const std::string &transitionWord)
         it.transition(transitionWord[i++], *this);
     }
 
-    if (i == transitionWord.size() && it.isMember(this->end()))
-    {
-        return true;
-    }
-    return false;
+    return (i == transitionWord.size() && it.isMember(this->end()));
 }
 
 typename DetermAutomaton::AutoIterator DetermAutomaton::begin() const

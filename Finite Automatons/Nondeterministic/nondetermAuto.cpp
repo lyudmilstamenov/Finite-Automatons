@@ -278,7 +278,6 @@ bool NondetermAutomaton::AutoIterator::hasEpsilonTransition()
 }
 
 
-
 void NondetermAutomaton::deleteNodes()
 {
     first = nullptr;
@@ -552,11 +551,7 @@ bool NondetermAutomaton::isWordFromAuto(const std::string &transitionWord)
         ++i;
     }
 
-    if (it == finals)
-    {
-        return true;
-    }
-    return false;
+    return (it == finals);
 }
 
 typename NondetermAutomaton::AutoIterator NondetermAutomaton::begin() const
